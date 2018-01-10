@@ -3,6 +3,7 @@
 \usepackage[croatian]{babel}
 \usepackage[utf8]{inputenc}
 
+
 \title{Git podržani protokoli i priprema servera}
 
 \begin{document}
@@ -10,7 +11,38 @@
 		\maketitle	
 
 	\end{frame}
-
 	
+	\begin{frame}{\centering Protokoli}
+		\textbf{Git podržava četiri protokola}
+		\begin{itemize}
+			\item Lokalni protokol
+			\item HTTP protokol
+			\item SSH(secure shell) protol
+			\item Git protokol
+		\end{itemize}
+	
+	\end{frame}
+
+	\begin{frame}[fragile]{Lokalni protokol}
+		Koristi se kada je repozitorij podignut na računalu na koji svi članov tima imaju lokalni pristup.
+		Članovi imaju pristup repozitoriju ako su ulogirani na istome računalu ili ako koriste disk koji je \textit{share-an} svim članovima tima.
+		\newline \newline
+		Naredba za kloniranje lokalnog repozitorija: \verb|$ git clone /srv/git/project.git|
+		
+	\end{frame}
+
+	\begin{frame}{Lokalni protokol}
+		\begin{table}
+			\caption{Prednosti i nedostaci}
+			\begin{tabular}{||p{130pt}|p{130pt}||}
+				\hline
+				\textbf{Prednosti} & \textbf{Nedostaci} \\ \hline
+				Jednostavno podizanje repozitorija. & Teško je pristupiti repozitoriju 	sa udaljenih lokacija. \\
+				Lagano je dohvatiti repozitorij od kolege: & Konfiguriranje NFS-a(network file system) nije jednostavno\\ \texttt{ git pull /home/john/project}  & Svaki korisnik ima potpunu ovlast u mijenjanju git-ovih datoteka. \\
+				\hline
+			\end{tabular}
+		\end{table}
+
+	\end{frame}
 
 \end{document}
