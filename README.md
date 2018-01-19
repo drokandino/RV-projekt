@@ -4,3 +4,6 @@
  * Filip Grgur
  * Filip Kapetanović
  * Dino Drokan
+
+### Dependencies
+ * Beamer package
