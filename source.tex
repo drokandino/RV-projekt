@@ -57,5 +57,33 @@
 		\end{table}
 
 	\end{frame}
+	\begin{frame}{HTTP protokol}
+		Do verzije gita 1.6.6. HTTP protokol je bio samo read-only. Odnosno, podaci su se mogli samo preuzeti preko http protokola.
+		Nakon 1.6.6. verzije \textit{pametni HTTP} protkol je predstavljen 
+		
+	\end{frame}
+	\begin{frame}{Pametni HTTP protokol (eng.Smart HTTP)}
+		Radi slično kao i git i ssh protokol te koristi i kriptiranu verziju HTTP-a.
+		Podosta je bolji od SSH(secured shell protocol), jer se mogu korstiti  lozinke i korisnička imena koja su pogodnija za korisnika više nego SSH ključevi. \newline
+		Smart HTTP je postao najpopularniji način korištenja gita. Za provjeru podataka i enkripciju koristi jedan te isti link (npr.git:// protcol).
+		Pri pushanju repozitorija ili čitanju, pitati će nas lozinku i korisničko ime.
+	\end{frame}
+	\begin{frame}{Glupi HTTP protokol (eng.Dumb HTTP)}
+		Prepoznajemo ga po tome što server ne reagira na Smart protokol.
+		Ljepota Dumb protokokla je u tome što se lako postavlja.
+	\end{frame}
+	\begin{frame}
+	\begin{table}
+			\caption{Prednosti i nedostaci pametne verzije}
+			\begin{tabular}{||p{130pt}|p{130pt}||}
+				\hline
+				\textbf{Prednosti} & \textbf{Nedostaci} \\ \hline
+				Jedan jedini URL za sve načine povezivanja & Spajanje na neke servere zna se zakomplicirati \\
+				Korištenje lozinke i korisičkog imena, a ne SSH ključ & Ako se koristi preko HTTP-a kompliciranije je push-at nego preko SSH\\  
+				Možemo postaviti repository-e kao read-only preko HTTPS-a. & \\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
 
 \end{document}
