@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 
 
+
 \title{Git podržani protokoli i priprema servera}
 
 \begin{document}
@@ -106,6 +107,35 @@
 				\hline
 			\end{tabular}
 		\end{table}
+	\end{frame}
+
+	\begin{frame}
+		\color{blue}
+		\centering
+		\huge Konfiguracija servera
+	\end{frame}
+
+	\begin{frame}{1. Bare repozitorij}
+		Za početak treba inicijalizirati \textit{bare} repozitorij, sa komandom \texttt{ git init --bare}. \newline
+		Bare repo. ne sprema slike(snapshootove) trenutnog napredka na nekome projektu, nego sprema povijest projekta. \newline
+		Takvi repozitoriji su npr. na githubu. Završavaju sa \texttt{.git} ekstenzijom. Onda se izvrši kloniranje \texttt{git clone /dirketorij}.
+	\end{frame}
+
+	\begin{frame}{2. Uploadanje na server}
+		Nakon što smo napravili bare repoziroij, isti moramo podignuti na server. \newline
+		Kopiranje na server se izvršava preko SSH protokola komandom \texttt{scp -r bare-repo.git korisnik@domena.com:/direktorij} \newline
+		Svatko tko ima SSH pristup tom serveru može klonirati repo komandom \texttt{git clone korisnik2@domena.com:/direktorij/bare-repo.git}\newline
+		Oni korisnici koji imaju pristup SSH pisanju na server mogu i pushati promjene na repo na serveru.
+		\newline 
+		Opisani koraci su dovoljni kako bi git repo bio postavljen na serveru i kako bi ga kolaboratori mogli koristiti. 
+	\end{frame}
+
+	\begin{frame}{SSH pristup}
+		Ako želimo dodatnu kontrolu nad pristupom repozitorija, možemo ju postaviti sa dozovlama pristupa od operativnog sustava. \newline
+		Kako bi svim člnaovima tima dopustili pristup serveru, moramo na serveru dodati svakoga korisnika, što može bit naporno kod većih timova.\newline
+		U tom slučaju možemo napraviti samo jednog korisnika na serveru i prikupiti sve SSH javne ključeve, od članova tima, koje spremamo u text fajlu sa javnim kljucevima na serveru\newline
+		Sada svatko može pristupati serveru preko komande \texttt{ssh git@server}. Ova metoda nikako ne mijenja način funkcioniranja gita, odnosno svi developeri mogu koristiti repozitorij normalno kao i sa više korisnika na serveru.
+
 	\end{frame}
 
 \end{document}
