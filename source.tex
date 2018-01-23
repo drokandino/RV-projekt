@@ -2,7 +2,7 @@
 
 \usepackage[croatian]{babel}
 \usepackage[utf8]{inputenc}
-
+\usepackage{hyperref}
 
 
 \title{Git podržani protokoli i priprema servera}
@@ -135,6 +135,17 @@
 		Kako bi svim člnaovima tima dopustili pristup serveru, moramo na serveru dodati svakoga korisnika, što može bit naporno kod većih timova.\newline
 		U tom slučaju možemo napraviti samo jednog korisnika na serveru i prikupiti sve SSH javne ključeve, od članova tima, koje spremamo u text fajlu sa javnim kljucevima na serveru\newline
 		Sada svatko može pristupati serveru preko komande \texttt{ssh git@server}. Ova metoda nikako ne mijenja način funkcioniranja gita, odnosno svi developeri mogu koristiti repozitorij normalno kao i sa više korisnika na serveru.
+
+	\end{frame}
+
+	\begin{frame}{Izvori}
+		\begin{itemize}
+			\item	\url{https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols}
+			\item	\url{https://en.wikipedia.org/wiki/Secure_Shell} 
+			\item	\url{https://git-scm.com/book/en/v2/Git-on-the-Server-Getting-Git-on-a-Server}
+			\item	\url{http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/}
+		\end{itemize}
+
 
 	\end{frame}
 
